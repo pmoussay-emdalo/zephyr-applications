@@ -8,6 +8,8 @@ manifest:
   remotes:
     - name: zephyrproject-rtos
       url-base: https://github.com/zephyrproject-rtos
+    - name: pmoussay-emdalo
+      url-base: https://github.com/pmoussay-emdalo
 
   projects:
     - name: zephyr
@@ -16,6 +18,14 @@ manifest:
       import:
         name-allowlist:
           - hal_microchip
-#        path-blocklist:
-#        - name: modules/hal/*
-#        - name: tools/*
+    - name: hal_microchip
+      remote: pmoussay-emdalo
+      path: modules/hal/microchip
+      revision: 0746d922bd0be125c1f20e2d31cff8c6b5a934b9
+    - name: rpmsg-lite
+      remote: pmoussay-emdalo
+      path: modules/lib/rpmsg-lite
+      revision: 7fc94efb2d8dbfa3d7c9212bcbb498fd3503af7a
+      #  path-blocklist:
+      #  - name: modules/hal/*
+      #  - name: tools/*
